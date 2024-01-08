@@ -17,6 +17,12 @@ Complete the tasks as they are listed, and only address optional tasks once the 
         - Atlanta 
         - New York
     - Available now checkbox
+    - Default values for UI components:
+      - price range slider: 0 - 3000.
+      - City: All
+      - Available now: unchecked
+    - When the page is opened - we should perform initial search using default filters
+    - All subsequent searches can be performed only by clicking on "Find" button
 3. Implement pagination
     - Page size - 9
 4. **Optional**: Implement filters sync with URL (?page=1&minPrice=10)
@@ -33,3 +39,7 @@ Complete the tasks as they are listed, and only address optional tasks once the 
         - two columns
     - desktop: 960px
         - three columns
+
+## Environment, Runtime and libraries
+- We use Vite with TypeScript and CSS Modules support
+- [Lodash](https://lodash.com/docs/4.17.15) and [clsx](https://github.com/lukeed/clsx) libraries are pre-installed to save your time

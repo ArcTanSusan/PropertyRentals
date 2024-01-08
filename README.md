@@ -42,4 +42,9 @@ Complete the tasks as they are listed, and only address optional tasks once the 
 
 ## Environment, Runtime and libraries
 - We use Vite with TypeScript and CSS Modules support
-- [Lodash](https://lodash.com/docs/4.17.15) and [clsx](https://github.com/lukeed/clsx) libraries are pre-installed to save your time
+- Pre installed packages:
+  - [Lodash](https://lodash.com/docs/4.17.15)
+  - [clsx](https://github.com/lukeed/clsx)
+  - [react-slider](https://github.com/zillow/react-slider)
+
+Feel free to install other libraries if you need them

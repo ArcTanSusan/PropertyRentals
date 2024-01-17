@@ -4,79 +4,12 @@
     gap: 24px;
 }
 
-.menu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    min-height: 48px;
-    background: #f6f6f6;
-    align-items: center;
-    padding: 0 16px;
-}
-
-.menuItem {
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .content {
     padding: 16px;
 }
 
-.sliderContainer {
-    flex: 1 1 auto;
-    min-width: 320px;
-    max-width: 400px;
-}
-
-.cityContainer {
-    flex: 0 0 auto;
-}
-
-.cityContainer label {
-    display: flex;
-    gap: 8px;
-}
-
-.checkboxContainer {
-    flex: 0 0 auto;
-}
-
-.buttonContainer {
-    flex: 0 0 auto;
-    width: 50px;
-}
-
-.slider {
-    height: 30px;
-    flex: 1 1 auto;
-}
-
-.thumb {
-    height: 30px;
-    width: 30px;
-
+.pagination {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 50%;
-    cursor: grab;
-    outline: none;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-}
-
-.track {
-    border-radius: 5px;
-    background: black;
-    height: 5px;
-    top: 50%;
-    transform: translateY(-50%);
 }

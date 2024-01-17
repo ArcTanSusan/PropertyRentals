@@ -21,7 +21,9 @@ export const Menu: FC<MenuProps> = () => {
                     max={3000}
                     ariaLabel={['Lower thumb', 'Upper thumb']}
                     ariaValuetext={state => `Thumb value ${state.valueNow}`}
-                    renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                    renderThumb={(props, state) => {
+                        return <div {...props}>{state.valueNow}</div>;
+                    }}
                     pearling
                     minDistance={10}
                     onChange={(value, thumbIndex) => {

@@ -30,7 +30,8 @@ interface PropertySearchFilters {
 }
 
 function generateURL(title: string): string {
-    return `/property_img/${title}.jpg`;
+    const urlTitle = title.replace(/\s+/g, '+');
+    return `https://placehold.co/1200x800?text=${urlTitle}`;
 }
 
 const titles = [

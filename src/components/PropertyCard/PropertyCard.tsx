@@ -10,7 +10,7 @@ interface PropertyCardProps {
 export const PropertyCard: FC<PropertyCardProps> = props => {
     return <div className={clsx(Styles.card, props.className)}>
         <div className={Styles.imgContainer}>
-            <img src="https://placehold.co/320x240/000000/FFF?text=Image" className={Styles.img} />
+            <img src="https://placehold.co/1200x800?text=Placeholder+image" className={Styles.img} />
         </div>
         <div className={Styles.content}>
             <div className={Styles.title}>Central Business District Flat</div>

@@ -1,7 +1,5 @@
 # Property Search Test Task
 
-![Wireframe](wireframe.jpg)
-
 ## Requirements
 
 Complete the tasks in the following order, and only address optional tasks once the earlier tasks have been completed.
@@ -23,11 +21,9 @@ Complete the tasks in the following order, and only address optional tasks once 
         - All
         - Atlanta 
         - New York
-    - Available now checkbox
     - Default values for UI components:
       - price range slider: 0 - 3000.
       - City: All
-      - Available now: unchecked
     - When the page is opened - we should perform initial search using default filters
     - All subsequent searches can be performed only by clicking on "Find" button
 3. Implement pagination

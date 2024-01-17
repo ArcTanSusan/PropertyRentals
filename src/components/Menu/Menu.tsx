@@ -41,12 +41,6 @@ export const Menu: FC<MenuProps> = () => {
                     </select>
                 </label>
             </div>
-            <div className={clsx(Styles.menuItem, Styles.checkboxContainer)}>
-                <label>
-                    <input type="checkbox" className={Styles.checkbox}/>
-                    Available Now
-                </label>
-            </div>
             <div className={clsx(Styles.menuItem, Styles.buttonContainer)}>
                 <button className={Styles.button}>Find</button>
             </div>

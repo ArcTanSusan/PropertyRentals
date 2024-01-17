@@ -1,6 +1,13 @@
 import { promisedTimeout } from "../helpers/timeout.ts";
 import random from "lodash/random";
 
+export interface SearchResponse {
+    results: Property[];
+    page: number;
+    pageSize: number;
+    pageTotal: number;
+}
+
 export interface Property {
     id: number;
     title: string;
@@ -100,7 +107,7 @@ const properties: Property[] = titles.map((title, index) => ({
     isLiked: false,
 }));
 
-function filterProperties(filters: PropertySearchFilters): Property[] {
+function filterProperties(filters: PropertySearchFilters): SearchResponse {
     const {
         pageSize = 10,
         page = 1,
@@ -110,9 +117,18 @@ function filterProperties(filters: PropertySearchFilters): Property[] {
         city = "",
     } = filters;
 
+    if (!pageSize) {
+        return {
+            results: [],
+            page,
+            pageSize,
+            pageTotal: 0,
+        }
+    }
+
     const todayDate = new Date().toISOString().split("T")[0];
 
-    return properties
+    const filteredResult = properties
         .filter(
             (property) =>
                 property.price >= minPrice &&
@@ -121,11 +137,18 @@ function filterProperties(filters: PropertySearchFilters): Property[] {
                 (city === "" || property.city === city)
         )
         .slice((page - 1) * pageSize, page * pageSize);
+
+    return {
+        results: filteredResult,
+        page,
+        pageSize,
+        pageTotal: Math.ceil(properties.length / pageSize)
+    }
 }
 
 export function fetchProperties(
     filters: PropertySearchFilters
-): Promise<Property[]> {
+): Promise<SearchResponse> {
     return promisedTimeout(
         random(1000, 2000),
         structuredClone(filterProperties(filters))

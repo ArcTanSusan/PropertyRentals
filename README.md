@@ -23,7 +23,8 @@ Complete the tasks in the following order, and only address optional tasks once 
         - All (Default)
         - Atlanta 
         - New York
-    - All subsequent searches can be performed only by clicking on "Find" button
+   - When the page is opened - perform an initial search using default filters
+   - All subsequent searches can be performed only by clicking on "Find" button
 3. Implement pagination
     - Page size - 9
 4. **Optional**: Implement like button

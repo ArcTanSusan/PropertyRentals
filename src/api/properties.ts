@@ -12,7 +12,7 @@ export interface Property {
     id: number;
     title: string;
     price: number;
-    city: string;
+    city: "" | "Atlanta" | "New York";
     rooms: number;
     picture: string;
     isLiked: boolean;

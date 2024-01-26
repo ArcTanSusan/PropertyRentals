@@ -7,24 +7,22 @@ Complete the tasks in the following order, and only address optional tasks once 
 1. Display a property list
    - All the data is ready and mocked for you - use function `fetchProperties` from [src/api/properties.ts](src/api/properties.ts)
    - All stylistic details are up to you. Don't spend too much time on it.
-   - We have the following breakpoints
+   - Implement the following layout using vanilla CSS (Flex / Grid are preferable)
      - mobile: 0-599px
          - make one column layout
      - tablet: 600-959px
          - two columns
      - desktop: 960px
          - three columns
+   - When the page is opened - perform an initial search without any filters (we'll implement them on the next step)
 2. Implement filters:
     - Min/max price
+      - min: 0, max: 3000
     - City selection (dropdown)
       - Options: 
-        - All
+        - All (Default)
         - Atlanta 
         - New York
-    - Default values for UI components:
-      - price range slider: 0 - 3000.
-      - City: All
-    - When the page is opened - we should perform initial search using default filters
     - All subsequent searches can be performed only by clicking on "Find" button
 3. Implement pagination
     - Page size - 9

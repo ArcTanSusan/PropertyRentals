@@ -26,10 +26,36 @@ interface PropertySearchFilters {
     city?: string;
 }
 
-function generateURL(title: string): string {
-    const urlTitle = title.replace(/\s+/g, '+');
-    return `https://placehold.co/1200x800?text=${urlTitle}`;
+export function fetchProperties(
+    filters: PropertySearchFilters = {},
+): Promise<SearchResponse> {
+    return promisedTimeout(
+        random(1000, 2000),
+        structuredClone(filterProperties(filters))
+    );
 }
+
+export function likeProperty(
+    id: number,
+    value: boolean
+): Promise<Property> {
+    const foundProperty = properties.find((p) => p.id === id);
+
+    if (!foundProperty) {
+        return promisedTimeout<any>(random(1000, 2000), "Property not found", true);
+    }
+
+    foundProperty.isLiked = value;
+    return promisedTimeout(random(1000, 2000), structuredClone(foundProperty));
+}
+
+// ------------------------- Backend mocking part, ignore it ------------------------- //
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
 
 const titles = [
     "High-Rise Luxury Condo",
@@ -58,6 +84,10 @@ const titles = [
     "Modernist Urban Abode",
     "City Chic Residence",
 ];
+
+function generateURL(title: string): string {
+    return `/property_img/${title}.jpg`;
+}
 
 const getRandomPrice = () =>
     Math.floor(Math.random() * (2500 - 200 + 1)) + 1000;
@@ -107,27 +137,4 @@ function filterProperties(filters: PropertySearchFilters): SearchResponse {
         pageSize,
         pageTotal: Math.ceil(properties.length / pageSize)
     }
-}
-
-export function fetchProperties(
-    filters: PropertySearchFilters = {},
-): Promise<SearchResponse> {
-    return promisedTimeout(
-        random(1000, 2000),
-        structuredClone(filterProperties(filters))
-    );
-}
-
-export function mutateLikeProperty(
-    id: number,
-    value: boolean
-): Promise<Property> {
-    const foundProperty = properties.find((p) => p.id === id);
-
-    if (!foundProperty) {
-        return promisedTimeout<any>(random(1000, 2000), "Property not found", true);
-    }
-
-    foundProperty.isLiked = value;
-    return promisedTimeout(random(1000, 2000), structuredClone(foundProperty));
 }

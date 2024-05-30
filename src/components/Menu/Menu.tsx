@@ -37,9 +37,9 @@ export const Menu: FC<MenuProps> = () => {
                 <label>
                     <span>City</span>
                     <select className={Styles.dropdown}>
-                        <option value="all">All</option>
-                        <option value="atlanta">Atlanta</option>
-                        <option value="new-york">New York</option>
+                        <option value="">All</option>
+                        <option value="Atlanta">Atlanta</option>
+                        <option value="New York">New York</option>
                     </select>
                 </label>
             </div>

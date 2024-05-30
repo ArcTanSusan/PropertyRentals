@@ -8,12 +8,14 @@ import {fetchProperties} from "../../api/properties.ts";
 
 export const PropertySearch: FC = () => {
     useEffect(() => {
+        // TODO: 1. Display all fetched properties
         fetchProperties({}).then(result => console.log(result));
     }, []);
 
     return <div className={Styles.page}>
         <Menu />
 
+        {/* TODO: 2. Add grid as described in readme */}
         <section className={Styles.content}>
             <PropertyCard />
         </section>

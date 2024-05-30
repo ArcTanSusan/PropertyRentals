@@ -1,17 +1,12 @@
-import {FC, useEffect} from "react";
+import {FC} from "react";
 
 import Styles from "./PropertySearch.module.css";
 import {PropertyCard} from "../PropertyCard/PropertyCard.tsx";
 import {Pagination} from "../Pagination/Pagination.tsx";
 import {Menu} from "../Menu/Menu.tsx";
-import {fetchProperties} from "../../api/properties.ts";
 
 export const PropertySearch: FC = () => {
-    useEffect(() => {
-        // TODO: 1. Display all fetched properties
-        fetchProperties({}).then(result => console.log(result));
-    }, []);
-
+    // TODO: 1. Display all fetched properties
     return <div className={Styles.page}>
         <Menu />
 

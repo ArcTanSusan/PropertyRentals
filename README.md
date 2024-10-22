@@ -1,5 +1,10 @@
 # Property Search Test Task
 
+## How to run locally
+
+1. npm i
+1. npm run dev
+
 ## Requirements
 
 Complete the tasks in the following order, and only address optional tasks once the earlier tasks have been completed.
